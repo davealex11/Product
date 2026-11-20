@@ -1,0 +1,11 @@
+work/
+.DS_Store
+__pycache__/
+*.pyc
+outputs/assets/*-master.mp4
+outputs/assets/*-rotation*.mp4
+outputs/assets/*.png
+outputs/assets/dr40-0.webp
+outputs/assets/dr40-2.webp
+outputs/assets/dr40-3.webp
+outputs/assets/dr40-4.webp
