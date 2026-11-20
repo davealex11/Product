@@ -7,7 +7,7 @@
 @media(hover:hover) and (pointer:fine){.visual{cursor:grab}}
 @media(prefers-reduced-motion:reduce){.visual img,.visual video{transform:none;will-change:auto}}
 
-.visual video{filter:brightness(1.18);border-radius:0;background:transparent}
+.visual video{filter:none;border-radius:0;background:transparent}
 #dr40 .visual img{object-fit:contain}
 /* Alternating hardware showcases inspired by the reference product layout. */
 :root{--ink:#122c22;--green:#20824f;--muted:#5f7067}
@@ -250,7 +250,7 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)'), fine=matchMedia('(
 const stage=story.querySelector('.stage'),visual=story.querySelector('.visual'),video=story.querySelector('video'),bar=story.querySelector('.progress b'),label=story.querySelector('.scroll-note span');const product=story.id==='dr40'?'dr40':'d450';
 let desired=0,scrollProgress=0,targetProgress=0,currentProgress=0,targetX=0,targetY=0,tiltX=0,tiltY=0,frame=0,pointerActive=false,scrollOffset=0,handoffProgress=0,lastDraw=0,lastScrollAt=-Infinity,lastPointerX=null,lastPointerY=null;
 const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
-function loadMotion(){if(!reduced.matches&&!video.getAttribute('src')){video.src=`assets/${product}-360${innerWidth<=600?'-mobile':''}.mp4`;video.load();}}
+function loadMotion(){if(!reduced.matches&&!video.getAttribute('src')){video.src=`assets/${product}-360${innerWidth<=600?'-mobile':''}.mp4?v=white2`;video.load();}}
 function seek(){if(reduced.matches||!Number.isFinite(video.duration)||video.seeking)return;if(Math.abs(video.currentTime-desired)>.025)video.currentTime=desired;}
 function draw(now){frame=0;const dt=Math.min((now-(lastDraw||now-16.67))/1000,.05);lastDraw=now;
 // Cap angular speed even when a wheel gesture skips most of the showcase.
