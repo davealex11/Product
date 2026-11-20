@@ -1,0 +1,21 @@
+server {
+    listen ${PORT};
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+    server_tokens off;
+    # Keep links from the original root redirect working after deployment.
+    rewrite ^/outputs/(.*)$ /$1 last;
+
+    # Revalidate the page so new GitHub deployments are visible on refresh.
+    location / {
+        add_header Cache-Control "no-cache" always;
+        try_files $uri $uri/ =404;
+    }
+
+    # Native byte-range responses support scroll-driven video seeking.
+    location /assets/ {
+        add_header Cache-Control "public, max-age=3600";
+        try_files $uri =404;
+    }
+}

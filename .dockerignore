@@ -1,0 +1,13 @@
+**
+!Dockerfile
+!deploy/
+!deploy/default.conf.template
+!outputs/
+!outputs/netradyne-products.html
+!outputs/assets/
+!outputs/assets/d450-360.mp4
+!outputs/assets/d450-360-mobile.mp4
+!outputs/assets/dr40-360.mp4
+!outputs/assets/dr40-360-mobile.mp4
+!outputs/assets/d450-render.webp
+!outputs/assets/dr40-1.webp

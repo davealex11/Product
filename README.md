@@ -24,4 +24,10 @@ The preview server supports HTTP byte ranges so browsers can scrub the camera vi
 
 Edit the canonical HTML directly. Generated master videos and temporary working files are excluded from Git. Camera animations are AI-generated; fine details can differ from the reference renders. Product copy is supplied prototype content.
 
-This repository does not automatically deploy a public website.
+## Railway deployment
+
+Connect `davealex11/Product`, branch `main`, with the repository root `/`. Railway uses the included Dockerfile and Nginx configuration. Leave custom build/start commands unset. The server listens on Railway's `PORT` and supports byte-range video requests.
+
+After a successful deployment, generate a domain in the service networking settings. Both `/` and `/netradyne-products.html` serve the product page. HTML is revalidated on refresh so updates are visible; video assets are cached for one hour.
+
+If pushes do not create deployments, check the service repository/branch, Railway GitHub App repository access, and pending deployment approvals. The local preview server is not the production start command.
